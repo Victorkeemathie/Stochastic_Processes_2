@@ -12,24 +12,20 @@ Actuaries use **stochastic processes** to model:
 - **Mortality & longevity risk** (estimating how long retirees will live).
 - **Macroeconomic effects** (inflation, wages, and economic cycles).
 
-To address these risks, actuaries rely on:
-- **Geometric Brownian Motion (GBM)** – Investment returns.
-- **Vasicek Model** – Interest rate dynamics.
-- **Cox-Ingersoll-Ross (CIR) Model** – Stochastic interest rates.
-- **Lee-Carter Model** – Mortality forecasting.
-- **Cairns-Blake-Dowd (CBD) Model** – Longevity risk.
-- **Vector Auto Regression (VAR)** – Economic dependencies.
+To address these risks, actuaries rely on **two key categories of models**:
+1. **Interest Rate & Investment Models** – Used to model investment returns, discount liabilities, and analyze macroeconomic factors.
+2. **Mortality & Longevity Models** – Used to estimate life expectancy, mortality rates, and longevity risk in pension funds.
 
 ---
 
-## **2. Stochastic Models in Pension Pricing**
+## **2. Interest Rate & Investment Models**
+These models are used to **project future investment returns, interest rates, and macroeconomic conditions**, which impact pension fund solvency.
 
 ### **2.1 Geometric Brownian Motion (GBM) – Investment Returns**
 #### **Why is it used?**
 Pension funds **invest in stocks, bonds, and assets**. Since asset prices fluctuate, actuaries use **GBM**, a stochastic model where prices evolve based on randomness.
 
 #### **Formula:**
-
 $$
 dS_t = \mu S_t dt + \sigma S_t dW_t
 $$
@@ -39,7 +35,6 @@ Where:
 - $\( \mu \)$ = Expected return.
 - $\( \sigma \)$ = Volatility.
 - $\( W_t \)$ = Wiener process (random Brownian motion).
-
 
 #### **How It Relates to Pension Pricing:**
 - Used in **Monte Carlo simulations** to predict pension fund growth.
@@ -85,48 +80,7 @@ The **$\( \sqrt{r_t} \)$** term ensures interest rates **never go negative**.
 
 ---
 
-### **2.4 Lee-Carter Model – Mortality Rate Forecasting**
-#### **Why is it used?**
-Pension funds **pay out benefits until retirees pass away**. The **Lee-Carter model** forecasts **mortality rates** based on historical trends.
-
-#### **Formula:**
-$$
-\ln m_x(t) = a_x + b_x k_t + \epsilon_{x,t}
-$$
-
-Where:
-- $\( m_x(t) \)$ = Mortality rate at age $\( x \)$.
-- $\( a_x \)$ = Average log mortality for age $\( x \)$.
-- $\( b_x \)$ = Sensitivity of age $\( x \)$ to mortality trends.
-- $\( k_t \)$ = Stochastic trend in mortality rates.
-
-#### **How It Relates to Pension Pricing:**
-- Helps estimate **life expectancy**, which determines **pension payouts**.
-- Used to price **annuities and pension liabilities**.
-
----
-
-### **2.5 Cairns-Blake-Dowd (CBD) Model – Longevity Risk**
-#### **Why is it used?**
-Pension funds **lose money** if retirees live **longer than expected**. The **CBD model** predicts **future longevity trends**.
-
-#### **Formula:**
-$$
-\ln \left( \frac{q_x}{1 - q_x} \right) = \beta_0(t) + \beta_1(t)(x - \bar{x})
-$$
-
-Where:
-- $\( q_x \)$ = Probability of death at age $\( x \)$.
-- $\( \beta_0(t) \)$ = Base mortality level.
-- $\( \beta_1(t) \)$ = Age-dependent mortality trend.
-
-#### **How It Relates to Pension Pricing:**
-- **Improves longevity risk assessment**.
-- Helps adjust **annuity prices dynamically**.
-
----
-
-### **2.6 Vector Auto Regression (VAR) – Economic Dependencies**
+### **2.4 Vector Auto Regression (VAR) – Economic Dependencies**
 #### **Why is it used?**
 Economic factors like **inflation, wages, and GDP** affect pension funds. **VAR** models how **multiple economic variables interact** over time.
 
@@ -146,5 +100,49 @@ Where:
 
 ---
 
-## **3. Conclusion**
+## **3. Mortality & Longevity Models**
+These models help actuaries **forecast how long retirees will live**, which is crucial for pension pricing. They ensure that pensions are **funded adequately for future payouts**.
+
+### **3.1 Lee-Carter Model – Mortality Rate Forecasting**
+#### **Why is it used?**
+Pension funds **pay out benefits until retirees pass away**. The **Lee-Carter model** forecasts **mortality rates** based on historical trends.
+
+#### **Formula:**
+$$
+\ln m_x(t) = a_x + b_x k_t + \epsilon_{x,t}
+$$
+
+Where:
+- $\( m_x(t) \)$ = Mortality rate at age $\( x \)$.
+- $\( a_x \)$ = Average log mortality for age \( x \).
+- $\( b_x \)$ = Sensitivity of age \( x \) to mortality trends.
+- $\( k_t \)$ = Stochastic trend in mortality rates.
+
+#### **How It Relates to Pension Pricing:**
+- Helps estimate **life expectancy**, which determines **pension payouts**.
+- Used to price **annuities and pension liabilities**.
+
+---
+
+### **3.2 Cairns-Blake-Dowd (CBD) Model – Longevity Risk**
+#### **Why is it used?**
+Pension funds **lose money** if retirees live **longer than expected**. The **CBD model** predicts **future longevity trends**.
+
+#### **Formula:**
+$$
+\ln \left( \frac{q_x}{1 - q_x} \right) = \beta_0(t) + \beta_1(t)(x - \bar{x})
+$$
+
+Where:
+- $\( q_x \)$ = Probability of death at age $\( x \)$.
+- $\( \beta_0(t) \)$ = Base mortality level.
+- $\( \beta_1(t) \)$ = Age-dependent mortality trend.
+
+#### **How It Relates to Pension Pricing:**
+- **Improves longevity risk assessment**.
+- Helps adjust **annuity prices dynamically**.
+
+---
+
+## **4. Conclusion**
 Stochastic models provide actuaries with powerful tools to **price pensions accurately** by **accounting for uncertainty**. By integrating these models, actuaries can ensure **pension funds remain solvent in the long run**.
